@@ -1,4 +1,4 @@
-package com.greatlearning.mentoredLabSession3.Question2;
+package com.greatlearning.mylabs;
 
 import java.util.ArrayList;
 
@@ -25,33 +25,25 @@ class FindLongestPath {
 	
 	public static ArrayList<Integer> findLongestPath(Node root) {
 
-		// If root is null means there
-		// is no binary tree so
-		// return a empty vector
+
 		if (root == null) {
 			ArrayList<Integer> output = new ArrayList<>();
 			return output;
 		}
 
-		// Recursive call on root.rightNode
 		ArrayList<Integer> rightNode = findLongestPath(root.rightNode);
 
-		// Recursive call on root.leftNode
 		ArrayList<Integer> leftNode = findLongestPath(root.leftNode);
 
-		// Compare the size of the two ArrayList
-		// and insert current node accordingly
 		if (rightNode.size() < leftNode.size()) {
 			leftNode.add(root.nodeData);
 		} else {
 			rightNode.add(root.nodeData);
 		}
 
-		// Return the appropriate ArrayList
 		return (leftNode.size() > rightNode.size() ? leftNode : rightNode);
 	}
 
-	// Driver Code
 	public static void main(String[] args) {
 		Node root = newNode(100);
 		root.leftNode = newNode(20);

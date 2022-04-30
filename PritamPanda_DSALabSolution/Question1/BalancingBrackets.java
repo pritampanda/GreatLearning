@@ -1,10 +1,10 @@
-package com.greatlearning.mentoredLabSession3;
+package com.greatlearning.mylabs;
 
 import java.util.Stack;
 
 public class BalancingBrackets {
 
-	    // function to check if brackets are balanced
+	    
 	    static boolean checkingBracketsBalanced(String bracketExpression)
 	    {
 	        
